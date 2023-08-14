@@ -2,7 +2,7 @@
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
-// const controls = document.querySelectorAll(".controls i");
+const controls = document.querySelectorAll(".controls i");
 
 let gameover = false;
 let foodX, foodY;
@@ -14,6 +14,7 @@ let score = 0;
 
 //Getting high score from the local storage
 let highScore = localStorage.getItem("high-score") || 0;
+
 highScoreElement.innerText = `High Score: ${highScore}`;
 
 const changeFoodPosition = () => {
