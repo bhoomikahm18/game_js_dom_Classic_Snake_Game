@@ -1,4 +1,3 @@
-
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
@@ -50,6 +49,7 @@ const changeDirection = (e) => {
 controls.forEach(key => {
     //Calling ChangeDirection on each key click and passing key dataset value as an object
     key.addEventListener("click", () => changeDirection({ key: key.dataset.key }));
+
 });
 
 const initGame = () => {
