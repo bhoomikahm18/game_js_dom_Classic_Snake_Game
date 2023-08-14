@@ -2,6 +2,7 @@
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
+// const controls = document.querySelectorAll(".controls i");
 
 let gameover = false;
 let foodX, foodY;
@@ -47,6 +48,7 @@ const changeDirection = (e) => {
     // initGame();
 }
 
+
 const initGame = () => {
     if (gameover) return handlerGameOver();
     let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
@@ -84,7 +86,7 @@ const initGame = () => {
         //Adding a div for each part of the snake's body.
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
         //Checking if the snake head hit the body, if so set gameOver to true
-        if(i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
+        if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
             gameover = true;
         }
     }
