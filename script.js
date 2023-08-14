@@ -14,7 +14,6 @@ let score = 0;
 
 //Getting high score from the local storage
 let highScore = localStorage.getItem("high-score") || 0;
-
 highScoreElement.innerText = `High Score: ${highScore}`;
 
 const changeFoodPosition = () => {
@@ -48,7 +47,10 @@ const changeDirection = (e) => {
     }
     // initGame();
 }
-
+controls.forEach(key => {
+    //Calling ChangeDirection on each key click and passing key dataset value as an object
+    key.addEventListener("click", () => changeDirection({ key: key.dataset.key }));
+});
 
 const initGame = () => {
     if (gameover) return handlerGameOver();
